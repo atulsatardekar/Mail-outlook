@@ -1,0 +1,9 @@
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    color: red; /* Adjust the color as needed */
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px; /* Adjust spacing as needed */
+  }
+  

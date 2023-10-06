@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="from">From:</label>
+        <div class="input-group">
+          <input type="text" class="form-control colorful-input" [(ngModel)]="selectedFromFrom" (click)="showContactList('from')">
+          <div class="input-group-append">
+            <button class="btn btn-colorful" type="button" (click)="showContactList('from')">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="showContactDropdownFrom" class="contact-dropdown">
+          <ul>
+            <li *ngFor="let contact of fromInput">
+              <span (click)="selectContact(contact, 'from')">{{ contact.name }}</span>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="to">To:</label>
+        <div class="input-group">
+          <input type="text" class="form-control colorful-input" [(ngModel)]="selectedFromTo" (click)="showContactList('to')">
+          <div class="input-group-append">
+            <button class="btn btn-colorful" type="button" (click)="showContactList('to')">
+   
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="showContactDropdownTo" class="contact-dropdown">
+          <ul>
+            <li *ngFor="let contact of fromInputTo" (click)="selectContact(contact, 'to')">{{ contact.name }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="cc">CC:</label>
+        <div class="input-group">
+          <input type="text" class="form-control colorful-input" [(ngModel)]="selectedFromcc" (click)="showContactList('cc')">
+          <div class="input-group-append">
+            <button class="btn btn-colorful" type="button" (click)="showContactList('cc')">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="showContactDropdowncc" class="contact-dropdown">
+          <ul>
+            <li *ngFor="let contact of fromInputcc" (click)="selectContact(contact, 'cc')">{{ contact.name }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Repeat the above pattern for 'To' and 'CC' fields -->
+  
+</div>

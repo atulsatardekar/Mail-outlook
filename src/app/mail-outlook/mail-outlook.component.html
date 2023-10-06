@@ -1,0 +1,11 @@
+<!-- contact-list.component.html -->
+<input type="text" placeholder="Search contacts" [(ngModel)]="searchText" (input)="filterContacts()">
+<input type="text" placeholder="Add contacts" [(ngModel)]="newContact" (input)="filterContacts()">
+<ul *ngIf="filteredContacts.length > 0">
+  <li *ngFor="let contact of filteredContacts">
+    <span>{{ contact.name }}</span>
+    <button *ngIf="!selectedContacts.includes(contact)" (click)="addContact(contact)">Add</button>
+   
+  </li>
+</ul>
+
